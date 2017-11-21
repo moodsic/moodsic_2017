@@ -1,0 +1,254 @@
+// Place all the styles related to the Location controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@import url(font-awesome.min.css);
+@import url("http://fonts.googleapis.com/css?family=Roboto");
+/* Background Elements */
+
+.arrow-up {
+  position: absolute;
+  left: -250px;
+  top: 150px;
+  width: 0;
+  height: 0;
+  border-left: 500px solid transparent;
+  border-right: 500px solid transparent;
+
+  border-bottom: 642px solid white;
+}
+
+/* Line */
+.line-1 {
+position: absolute;
+width: 550px;
+height: 0px;
+left: 240px;
+top: 450px;
+
+border: 3px solid rgba(0, 0, 0, 0.43);
+transform: rotate(52.36deg);
+}
+
+/* Line */
+.line-2 {
+position: absolute;
+width: 550px;
+height: 0px;
+left: 300px;
+top: 500px;
+
+border: 3px solid rgba(0, 0, 0, 0.43);
+transform: rotate(52.36deg);
+}
+
+body {
+  background-color: #bdc3c7;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Roboto', sans-serif;;
+}
+
+.container {
+  margin: 0 auto;
+  width: 960px;
+}
+
+/* Header */
+#header {
+	position: fixed;
+	width: 100%;
+	z-index: 999;
+}
+#header .header-content {
+	margin: 0 auto;
+	padding: 40px 10%;
+	width: 100%;
+	-moz-transition: padding 0.3s;
+	-o-transition: padding 0.3s;
+	-webkit-transition: padding 0.3s;
+	transition: padding 0.3s;
+}
+#header.fixed .header-content {
+	border-bottom: 0;
+	padding: 25px 10%;
+}
+#header.fixed .nav-toggle {
+	top: 18px;
+}
+.header a:hover, .header a.active {
+	color: rgba(0,0,0,0);
+}
+.header h1 {
+	font-size: 60px;
+	color: #405887;
+	padding-left: 50px;
+	font-family: 'Roboto';
+  display: inline-block;
+}
+
+.header .actions {
+  display: inline-block;
+  float:right;
+  margin: 60px auto;
+}
+.header .actions input {
+  background-color: rgba(0, 0, 0, 0.43);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 0 50px 0 0;
+  padding: 12px 24px;
+  transition: background-color 0.5s;
+  text-decoration: none;
+
+}
+
+/* Main */
+.main {
+  color: black;
+  position: relative;
+  top: 25px;
+  text-align: center;
+}
+
+p {
+  font-size: 30px;
+}
+
+pa {
+  color: #FCDFCE;
+}
+
+ps {
+  color: #8A7D80;
+  font-size: 23px;
+}
+
+pp {
+  color: #626670;
+}
+/* Text Box */
+input[type=text] {
+	background-color: white;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+html, body, p {
+  margin: 0;
+}
+
+.container {
+  width: 480px;
+  margin: 0 auto;
+}
+
+.container2 {
+  width: 1500px;
+  margin: 0 auto;
+}
+
+.messages, .create {
+  margin: 40px 0;
+}
+
+.messages a,
+.create .actions input {
+  background-color: rgba(0, 0, 0, 0.43);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 12px 24px;
+  transition: background-color 0.5s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.message {
+  background-color: #495f77;
+  font-weight: 300;
+  padding: 16px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.message .content {
+  font-size: 25px;
+  color: #fff;
+}
+
+textarea {
+  font-size: 20px !important;
+}
+textarea::-webkit-input-placeholder {
+  font-size: 20px !important;
+}
+textarea:-ms-input-placeholder {
+  font-size: 20px !important;
+}
+
+p.time {
+  color: #0084d7;
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+button {
+  background-color: #f2580b;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 12px 24px;
+  transition: background-color 0.5s;
+}
+
+button:hover {
+  background-color: #c24609;
+  transition: background-color 0.5s;
+}
+
+form label {
+  display: block;
+  width: 100%;
+}
+
+form textarea {
+  border: 1px solid transparent;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  margin: -15px 0 10px;
+  min-height: 25px;
+  padding: 16px;
+  transition: border 0.5s;
+  width: 75%;
+  resize: none;
+}
+
+form textarea:focus {
+  border: 1px solid #0084d7;
+  box-shadow: 0;
+  outline: 0;
+  transition: border 0.5s;
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .messages, .create {
+      padding: 0 20px;
+    }
+}

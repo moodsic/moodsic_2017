@@ -1,0 +1,39 @@
+<html>
+<head>
+<title> MOODSIC </title>
+</head>
+
+<body>
+<section>
+<div class = "header">
+  <h1>MOODSIC</h1>
+    <div class="actions">
+      <%= button_to "Start Over", '/locations', :method => "get"  %>
+    </div>
+</div>
+</section>
+
+<section>
+  <div class="main">
+    <p>the playlist, "<pp><%= @playlist_info[1].split.map { |i| i.capitalize }.join(' ') %></pp>," seems to fit the weather in <pa><%= @location.content %></pa> the best. <br> </p>
+    <div class="messages">
+      <div class="container2">
+        <div class="message" style="background-color:<%=@playlist_info[0]%>">
+        <table>
+          <% @playlist_info[2].each_slice(3) do |tracks| %>
+            <tr>
+              <% tracks.each do |track| %>
+                <td>
+      			      <p class="content"><%= track.name %></p>
+                </td>
+              <% end %>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+<head>
+<title> MOODSIC </title>
+</head>
+
+<body>
+<section>
+<div class = "header">
+<h1>MOODSIC</h1>
+</div>
+</section>
+
+<section>
+<div class="main">
+  <ps>the weather definitely affects our mood, and our mood definitely <br> determines what music we want to listen to
+      at the moment. <br><br> curious to find the best playlist for your weather-induced mood?</ps>
+  <div class="container">
+    <div class = "arrow-up">
+    </div>
+    <div class = "line-1">
+    </div>
+    <div class = "line-2">
+    </div>
+        <br><br><br><br>
+    <p>please input your current location:</p>
+    <div class="create">
+      <div class="container">
+       	<%= form_for(@location) do |f| %>
+      		<div class="field">
+        		<%= f.text_area :content, placeholder: "ex: Needham, MA", rows: "1"%>
+      		</div>
+      		<div class="actions">
+        		<%= f.submit "Submit" %>
+      		</div>
+    		<% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+</body>
+</html>

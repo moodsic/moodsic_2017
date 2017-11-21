@@ -1,0 +1,38 @@
+<html>
+<head>
+<title> MOODSIC </title>
+</head>
+
+<body>
+<section>
+<div class = "header">
+<h1>MOODSIC</h1>
+</div>
+</section>
+
+<section>
+<div class="main">
+  <div class="container">
+    <div class = "arrow-up">
+    </div>
+    <div class = "line-1">
+    </div>
+    <div class = "line-2">
+    </div>
+    <p>Looking at weather in <br> <pa><%= @location.content %></pa>. Is this correct?</p>
+    <div class="create">
+      <div class="container">
+      		<div class="actions">
+        		<%= button_to "Yes!", '/locations/playlist', :method => "get"  %>
+      		</div>
+          <div class="actions">
+            <%= button_to "No, let's try again", '/locations', :method => "get"  %>
+          </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+</body>
+</html>

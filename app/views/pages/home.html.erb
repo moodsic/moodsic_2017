@@ -1,0 +1,40 @@
+<html>
+<head>
+<title> MOODSIC </title>
+</head>
+
+<body>
+<section>
+<div class = "header">
+<h1>MOODSIC</h1>
+</div>
+</section>
+
+<section>
+<div class="main">
+  <div class="container">
+    <div class = "arrow-up">
+    </div>
+    <div class = "line-1">
+    </div>
+    <div class = "line-2">
+    </div>
+    <p>please input your current location:</p>
+    <div class="create">
+      <div class="container">
+       	<%= form_for(@loc) do |f| %>
+      		<div class="field">
+        		<%= f.label :message %><br>
+        		<%= f.text_area :content %>
+      		</div>
+      		<div class="actions">
+        		<%= f.submit "Create" %>
+      		</div>
+    		<% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+</body>
+</html>
