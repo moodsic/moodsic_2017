@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'location#new'
   get 'locations' => 'location#new'
   post 'locations' => 'location#create'
   get 'locations/show' => 'location#show'
