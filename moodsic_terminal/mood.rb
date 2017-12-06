@@ -17,22 +17,21 @@ class Spotify
 		sleep(1)
 		recommended_songs = recommended_playlist.first.tracks
 		puts "And here's the songs in that playlist: "
-		recommended_songs.each{ |track| puts track.name}	
+		recommended_songs.each{ |track| puts track.name}
 	end
 end
 
 class WeatherMood
 	def initalize
 		@weather = "Needham, MA"
-		@weather_condition = "amb"
+		@weather_condition = 0
 		@change = "N"
 	end
 
 	private
 	def weather_lookup(city, state)
 		@weather = Weather.lookup_by_location("#{city}, #{state}", Weather::Units::FAHRENHEIT)
-		@weather_condition = @weather.condition.text.to_s
-
+		@weather_condition = @weather.condition.code.to_i
 		puts "Looking at weather in #{city}, #{state}. Is this correct? (Y/N) "
 		@change = gets.chomp.upcase
 	end
@@ -57,7 +56,7 @@ class WeatherMood
 	public
 	def check_input()
 		input()
-			
+
 		case @change
 			when "Y"
 				puts "Great! Finding songs now..."
@@ -72,22 +71,36 @@ class WeatherMood
 
 	private
 	def set_mood()
-		happy_weather_moods = ["Sunny"]
-		sad_weather_moods = ["Cloudy", "Rain", "Showers"]
-		if sad_weather_moods.any? { |cond| @weather_condition.include? cond}
-			mood = "rainy"
-		elsif happy_weather_moods.any? { |cond| @weather_condition.include? cond}
-			mood = "happy"
-		elsif @weather.condition.temp < 50
-			mood = "sweater weather"
-		elsif @weather.condition.temp > 90
-			mood = "summer"
+    stormy = [0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 15, 17, 18, 35, 37, 41, 43, 45, 46]
+    rain = [9, 11, 12, 38, 39, 40, 47]
+    snow = [13, 14, 16, 19, 42]
+    fog = [20, 21, 22, 23]
+    cold = [24, 25]
+    sunny = [32, 34, 36]
+    cloudy = [26, 27, 28, 29, 30, 44]
+    clear = [31, 33]
+
+		if stormy.include? @weather_condition
+			mood = "Dark & Stormy"
+		elsif rain.include? @weather_condition
+			mood = "Rainy Day"
+    elsif snow.include? @weather_condition
+      mood = "Snowy Day"
+    elsif fog.include? @weather_condition
+      mood = "Foggy Day"
+    elsif cold.include? @weather_condition
+      mood = "Sweater Weather"
+    elsif sunny.include? @weather_condition
+      mood = "Sunny Day"
+    elsif cloudy.include? @weather_condition
+      mood = "For a cloudy day"
+    elsif clear.include? @weather_condition
+      mood = "Stargazing"
 		else
 			mood = "top hits"
 		end
-	
+
 		s = Spotify.new(mood)
 		s.recommend()
 	end
 end
-
