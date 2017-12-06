@@ -1,0 +1,5 @@
+source "https://rubygems.org"
+ruby "2.2.8"
+
+gem "rspotify", git: 'https://github.com/guilhermesad/rspotify.git', ">= 2.2.2"
+gem weather-api
